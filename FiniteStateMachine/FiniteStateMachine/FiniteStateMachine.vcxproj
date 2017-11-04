@@ -19,7 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Climbing.cpp" />
+    <ClCompile Include="Idle.cpp" />
+    <ClCompile Include="Jumping.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="State.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="Climbing.h" />
+    <ClInclude Include="Idle.h" />
+    <ClInclude Include="Jumping.h" />
+    <ClInclude Include="State.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
