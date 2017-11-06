@@ -3,10 +3,10 @@
 #include "Animation.h"
 #include "State.h"
 
-class Jumping: public State
+class Hammer: public State
 {
 public:
-	Jumping();
-	~Jumping();
+	Hammer();
+	~Hammer();
 	void idle(Animation* a);
 };

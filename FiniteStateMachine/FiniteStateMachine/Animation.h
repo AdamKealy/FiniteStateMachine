@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include "Idle.h"
 
 class Animation
 {
@@ -11,4 +10,6 @@ public:
 	void idle();
 	void jumping();
 	void climbing();
+	void hammering();
+	void shoveling();
 };

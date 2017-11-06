@@ -1,4 +1,5 @@
 #include "Animation.h"
+#include "Idle.h"
 
 Animation::Animation()
 {
@@ -23,4 +24,14 @@ void Animation::jumping()
 void Animation::climbing()
 {
 	current->climbing(this);
+}
+
+void Animation::hammering()
+{
+	current->hammering(this);
+}
+
+void Animation::shoveling()
+{
+	current->hammering(this);
 }

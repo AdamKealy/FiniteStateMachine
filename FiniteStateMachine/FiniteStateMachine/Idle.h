@@ -9,4 +9,6 @@ public:
 	~Idle();
 	void jumping(Animation* a);
 	void climbing(Animation* a);
+	void hammering(Animation* a);
+	void shoveling(Animation* a);
 };
