@@ -33,5 +33,5 @@ void Animation::hammering()
 
 void Animation::shoveling()
 {
-	current->hammering(this);
+	current->shoveling(this);
 }

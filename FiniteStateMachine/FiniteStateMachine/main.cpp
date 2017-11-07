@@ -1,7 +1,8 @@
 /// <summary>
+/// simple game loop for SFML[2.4.2]
 /// 
-/// 
-/// 
+/// @author Peter Lowe
+/// @date May 21017
 /// </summary>
 
 #ifdef _DEBUG 
@@ -17,38 +18,18 @@
 #pragma comment(lib,"sfml-window.lib") 
 #pragma comment(lib,"sfml-network.lib") 
 #endif 
-#include "Animation.h"
 
+
+#include "Game.h"
 
 /// <summary>
 /// main entry point
 /// </summary>
-/// <returns>zero</returns>
+/// <returns>true</returns>
 int main()
 {
-	Animation fsm;
-	int i = 0;
-	while (true)
-	{
-		if (i == 0)
-		{
-			fsm.jumping();
-			i = 1;
-		}
-		if (i == 1)
-		{
-			fsm.climbing();
-			i = 2;
-		}
-		if (i == 2)
-		{
-			fsm.hammering();
-			i = 3;
-		}
-		if (i == 3)
-		{
-			fsm.shoveling();
-			i = 0;
-		}
-	}
+	Game game;
+	game.run();
+
+	return 1;
 }
