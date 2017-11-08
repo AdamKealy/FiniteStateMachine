@@ -45,14 +45,20 @@ void Game::processEvents()
 	Animation fsm;
 
 	while (m_window.pollEvent(event))
-	{
+	{	
+		
+		fsm.idle();
+		m_Sprite.setTexture(m_texture[0]);
+
+
 		if ( sf::Event::Closed == event.type) // window message
 		{
 			m_window.close();
 		}
 		if (sf::Event::KeyPressed == event.type) //user key press
 		{
-			
+				
+
 			switch (event.key.code)
 			{
 			case sf::Keyboard::Escape:
@@ -60,19 +66,23 @@ void Game::processEvents()
 				break;
 			case sf::Keyboard::Up:
 				fsm.climbing();
-				m_whichState = climb;
+				m_Sprite.setTexture(m_texture[2]);
+				
 				break;
 			case sf::Keyboard::Right:
 				fsm.hammering();
-				m_whichState = hammer;
+				m_Sprite.setTexture(m_texture[4]);
+
 				break;
 			case sf::Keyboard::Space:
 				fsm.jumping();
-				m_whichState = jump;
+				m_Sprite.setTexture(m_texture[1]);
+
 				break;
 			case sf::Keyboard::Down:
 				fsm.shoveling();
-				m_whichState = dig;
+				m_Sprite.setTexture(m_texture[3]);
+
 				break;
 			default:
 				break;
@@ -81,7 +91,7 @@ void Game::processEvents()
 		}
 	
 	}
-	fsm.idle();
+
 }
 
 /// <summary>
@@ -109,11 +119,33 @@ void Game::render()
 /// </summary>
 void Game::setupSprite()
 {
-	if (!m_texture.loadFromFile("ASSETS\\IMAGES\\Dig.png"))
+	if (!m_texture[0].loadFromFile("ASSETS\\IMAGES\\Idle.png"))
 	{
 		// simple error message if previous call fails
 		std::cout << "problem loading logo" << std::endl;
 	}
-	m_Sprite.setTexture(m_texture);
-	m_Sprite.setPosition(300.0f, 180.0f);
+	if (!m_texture[1].loadFromFile("ASSETS\\IMAGES\\jump.png"))
+	{
+		// simple error message if previous call fails
+		std::cout << "problem loading logo" << std::endl;
+	}
+	if (!m_texture[2].loadFromFile("ASSETS\\IMAGES\\Climb.png"))
+	{
+		// simple error message if previous call fails
+		std::cout << "problem loading logo" << std::endl;
+	}
+	if (!m_texture[3].loadFromFile("ASSETS\\IMAGES\\Dig.png"))
+	{
+		// simple error message if previous call fails
+		std::cout << "problem loading logo" << std::endl;
+	}
+	if (!m_texture[4].loadFromFile("ASSETS\\IMAGES\\Hammer.png"))
+	{
+		// simple error message if previous call fails
+		std::cout << "problem loading logo" << std::endl;
+	}
+	
+	m_Sprite.setTexture(m_texture[0]);																																					
+	m_Sprite.setPosition(350.0f, 200.0f);
+
 }
